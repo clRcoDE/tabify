@@ -37,12 +37,6 @@ const  ExploreStack= createStackNavigator(
 )
 
 
-const AppNavigator = createSwitchNavigator(
-    {
-        Launcher : {screen: Launcher},
-        HomeStack:{screen : HomeStack}
-    }
-)
 
 const HomeStack = createBottomTabNavigator(
     {
@@ -55,7 +49,17 @@ const HomeStack = createBottomTabNavigator(
     }
 )
 
-export default  AppContainer = createAppContainer({AppNavigator})
+
+const AppNavigator = createSwitchNavigator(
+    {
+        Launcher : Launcher,
+        Home: HomeStack
+    }
+)
+const AppContainer = createAppContainer(AppNavigator)
+
+
+export default AppContainer
 
 
 
